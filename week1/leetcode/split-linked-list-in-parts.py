@@ -17,16 +17,14 @@ class Solution:
         for i in range(k):
             t = ListNode()
             h= t
-            if  nav:
-                for i in range(each):
-                    if nav:
-                        t.next = ListNode(nav.val)
-                        t = t.next
-                        nav = nav.next
-                if extra and nav:
-                    t.next = ListNode(nav.val)
-                    t = t.next
-                    nav = nav.next
-                    extra -=1
+            for i in range(each):
+                t.next = ListNode(nav.val)
+                t = t.next
+                nav = nav.next
+            if extra:
+                t.next = ListNode(nav.val)
+                t = t.next
+                nav = nav.next
+                extra -=1
             ans.append(h.next)
         return ans
