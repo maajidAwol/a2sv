@@ -3,15 +3,14 @@
 
 class Solution:
     def firstBadVersion(self, n: int) -> int:
-        left = 1
-        right = n
-
-        while left <= right:
-            mid = (left + right) >> 1
-
+        l = 0
+        r = n+1
+        while l +1 < r:
+            mid = (l+r)//2
             if isBadVersion(mid):
-                right = mid - 1
+                r = mid
             else:
-                left = mid + 1
+                l = mid
+            
+        return r
 
-        return left
