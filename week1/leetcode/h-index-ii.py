@@ -1,15 +1,15 @@
 class Solution:
     def hIndex(self, citations: List[int]) -> int:
-        l = -1
-        r = len(citations)
-        n =len(citations)
-        while l +1 < r:
-            mid = (l+r)//2
-            if citations[mid] ==(n-mid):
+        left = -1
+        right = len(citations)
+        length =len(citations)
+        while left +1 < right:
+            mid = (left+right)//2
+            if citations[mid] ==(length-mid):
                 return citations[mid]
-            if citations[mid] > (n-mid):
-                r = mid
+            if citations[mid] > (length-mid):
+                right = mid
             else:
-                l = mid
-        pos = n -r
+                left = mid
+        pos = length - right
         return pos
