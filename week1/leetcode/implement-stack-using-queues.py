@@ -7,9 +7,7 @@ class MyStack:
     def pop(self) -> int:
         return self.que.pop()
     def top(self) -> int:
-        rt = self.que.pop()
-        self.que.append(rt)
-        return rt
+        return self.que[-1]
     def empty(self) -> bool:
         return len(self.que) ==0
 
